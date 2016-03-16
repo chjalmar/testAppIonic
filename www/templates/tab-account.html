@@ -5,5 +5,26 @@
         Enable Friends
     </ion-toggle>
     </ion-list>
+    <br>
+    <p align=center>Ajustar volumen</p>
+    <div class="list list-inset" ng-controller="AudioCtrl">
+  
+    <div class="item item-divider">Audio</div>
+    <div class="item">
+        <audio src="media/audio.wav" preload="auto" controls id="audioSource">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="item item-divider text-center">
+        <h3>Current volume: {{ slider.volume }}</h3>
+    </div>
+    <div class="item range">
+       <i class="icon ion-volume-low"></i>
+       <input type="range" name="slider.volume" ng-model="slider.volume" ng-init="slider.volume=50" ng-change="setVolume()">
+       <i class="icon ion-volume-high"></i>
+    </div>
+
+</div>
   </ion-content>
 </ion-view>

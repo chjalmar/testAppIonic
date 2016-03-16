@@ -25,4 +25,14 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('AudioCtrl', function($scope) {
+    var audioSrc = document.getElementById("audioSource");
+    audioSrc.volume = 0.5;
+    $scope.setVolume = function() {
+        audioSrc.volume = ($scope.slider.volume) / 100;
+    }
 });
+
+                                    
